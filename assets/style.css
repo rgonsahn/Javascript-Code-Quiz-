@@ -54,14 +54,45 @@ p{
     } 
 
 .hideThis{
-    display: contents;
+    
     
 
 }
-#highScore{
 
-}
 button{
     background-color: #008CBA; /* Blue */
     justify-content: center;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  
+    #section1{
+      min-height: calc(100% - 82px);
+      padding: 50px;
+      font-size: xx-small;
+      font-weight: bolder;
+      flex-shrink: inherit;
+      min-width: 420px;
+    }
+    #section2{
+        min-width:420px;
+        flex-direction: column
+        ;
+      }
+      #section3 {
+        flex-direction: column;
+      }
+      .timer{
+        align-items: flex-end;
+        margin-left:20px;
+
+      }
+      p{
+        flex-shrink:inherit;
+        flex-direction: row;
+        
+      }
+      #startBtn{
+        position: absolute;
+      
+    }
 }

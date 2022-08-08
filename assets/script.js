@@ -136,5 +136,3 @@ function setCounterText() {
   } )  
 
   
-  //Should I put the high scores in my array so It appears after the quiz?
-  // how to move timer to the right of page
