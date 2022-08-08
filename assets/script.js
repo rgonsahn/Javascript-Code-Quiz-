@@ -20,6 +20,7 @@ choice4.addEventListener("click",nextQuestion)
 var counter= 0
 var yourInitials= document.querySelector("#initials")
 var saveBtn= document.querySelector("#submit")
+//Quiz questions
 var questionsArray= [
   {
     question:"Which of these is a method in javaScript?",
@@ -54,15 +55,16 @@ function setCounterText() {
 }
 
    
-  startbtnEl.addEventListener("click", function() {
-    // count--;
-    // setCounterText();
+ //Displays first question in the array once start button is clicked
+startbtnEl.addEventListener("click", function() {
     firstQuestion();
 
   });
 
   function firstQuestion(){
+    //displays first instructions for quiz
     section1.classList.add("hidden")
+    //removes instructions for quiz, and begins to display questions and choices at index 0
     section2.classList.remove("hidden")
     question.textContent=questionsArray[counter].question;
     choice1.textContent=questionsArray[counter].choices[0];
@@ -73,7 +75,8 @@ function setCounterText() {
   
   }
  startbtnEl.addEventListener("click",countDown);
-  function nextQuestion(event){
+  //Conditional statement that alerts whether a response is correct, incorrect, or the end of the quiz
+ function nextQuestion(event){
     if(event.target.textContent==questionsArray[counter].answer){
       alert("correct")
       score ++
@@ -105,7 +108,7 @@ function setCounterText() {
     sec--;
     if (sec == 0){
       clearInterval(time);
-      //This is saying counter has reached the total number of questions
+      //This is saying counter has reached the total number of questions and game is over
       counter=questionsArray.length
       question.textContent=questionsArray[counter].question;
       choice1.textContent=questionsArray[counter].choices[0];
@@ -117,6 +120,7 @@ function setCounterText() {
       alert("Game Over!! :(");
     }
   }
+  //sets and retrieves items key (user's initials) and value (user's score)
   saveBtn.addEventListener("click", function(event){
     event.preventDefault();
    localStorage.setItem(yourInitials.value.trim(), score);
